@@ -13,10 +13,13 @@ async function getFacultyData(facultyName) {
 }
 
 export default async function FacultyPage({ params }) {
-  // Await params to ensure it contains the correct data
-  const { facultyName } = params; 
 
-  // Fetch faculty data using the facultyName
+  const facultyName = params?.facultyName;
+
+  if (!facultyName) {
+    return <h1>Invalid Faculty Page</h1>;
+  }
+
   const faculty = await getFacultyData(facultyName);
 
   if (!faculty) {
