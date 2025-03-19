@@ -1,8 +1,9 @@
 import fs from 'fs';
 import path from 'path';
+import FacultyProfile from "../../../components/FacultyProfile";
 
 async function getFacultyData(facultyName) {
-  const filePath = path.join(process.cwd(), 'public/faculty-data', `${facultyName}.json`);
+  const filePath = path.join(process.cwd(), '/public/faculty-data', `${facultyName}.json`);
   console.log("looking for file:", filePath);
 
   if (!fs.existsSync(filePath)) {
@@ -16,32 +17,20 @@ async function getFacultyData(facultyName) {
   return data;
 }
 
+// Faculty Page Data to be displayed
 export default async function FacultyPage({ params }) {
-  console.log("params recieved:", params);
-
+  
   const facultyName = params?.facultyName;
   
-  console.log("faculty name:", facultyName);
-
   if (!facultyName) {
     return <h1>Invalid Faculty Page</h1>;
   }
 
   const faculty = await getFacultyData(facultyName);
-  console.log("faculty data:", faculty);
 
   if (!faculty) {
     return <h1>Faculty not found</h1>;
   }
 
-  return (
-    <div>
-      <h1>{faculty.name}</h1>
-      <p>{faculty.title}</p>
-      <p>{faculty.bio}</p>
-      <a href={faculty.website} target="_blank" rel="noopener noreferrer">
-        Personal Website
-      </a>
-    </div>
-  );
+  return <FacultyProfile faculty={faculty} />
 }
