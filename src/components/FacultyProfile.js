@@ -21,6 +21,15 @@ export default function FacultyProfile({ faculty }) {
         >
           Personal Website
         </a>
+
+        {/* publication link */}
+        <div className="mt-6 text-center">
+          <Link href={`/faculty/${faculty.name.toLowerCase().replace(/ /g, "-")}/publications`}>
+            <button className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700">
+              View Publications
+            </button>
+          </Link>
+        </div>
       </div>
     );
   }

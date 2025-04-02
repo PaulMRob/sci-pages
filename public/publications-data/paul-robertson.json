@@ -1,0 +1,17 @@
+[
+    {
+      "title": "Advancements in Geological Sciences",
+      "year": 2023,
+      "authors": ["Paul Robertson", "Jane Doe"],
+      "journal": "Journal of Geology",
+      "link": "https://example.com/publication1"
+    },
+    {
+      "title": "Volcanic Activity and Climate Change",
+      "year": 2021,
+      "authors": ["Paul Robertson"],
+      "journal": "Earth Science Review",
+      "link": "https://example.com/publication2"
+    }
+  ]
+  
