@@ -1,5 +1,7 @@
 //this is a reusable component
 // components/FacultyProfile.js
+import Link from "next/link";
+
 export default function FacultyProfile({ faculty }) {
     return (
       <div className="max-w-4xl mx-auto flex items-center gap-x-4 rounded-xl bg-white shadow-lg outline outline-white/5 p-8">
